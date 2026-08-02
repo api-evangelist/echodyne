@@ -1,0 +1,59 @@
+generated: '2026-08-01'
+method: searched
+source: https://portal.echodyne.com/.well-known/openid-configuration
+docs: https://portal.echodyne.com/s/login/
+summary:
+  types:
+  - openIdConnect
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  - implicit
+  note: 'Derived from the anonymous OIDC discovery document served by the Echodyne Customer
+    Portal (Salesforce Experience Cloud). This governs access to the customer portal — the
+    distribution point for radar software, manuals, tooling and the ATAK plugin. It does NOT
+    describe authentication to the EchoWare radar management/data API itself, which runs on
+    the operator''s own network and whose auth model is documented only inside the gated
+    portal.'
+schemes:
+- name: EchodynePortalOIDC
+  type: openIdConnect
+  openIdConnectUrl: https://portal.echodyne.com/.well-known/openid-configuration
+  issuer: https://portal.echodyne.com
+  endpoints:
+    authorization: https://portal.echodyne.com/services/oauth2/authorize
+    token: https://portal.echodyne.com/services/oauth2/token
+    userinfo: https://portal.echodyne.com/services/oauth2/userinfo
+    revocation: https://portal.echodyne.com/services/oauth2/revoke
+    introspection: https://portal.echodyne.com/services/oauth2/introspect
+    registration: https://portal.echodyne.com/services/oauth2/register
+    end_session: https://portal.echodyne.com/services/auth/idp/oidc/logout
+    jwks: https://portal.echodyne.com/id/keys
+  response_types_supported:
+  - code
+  - token
+  - token id_token
+  subject_types_supported:
+  - public
+  id_token_signing_alg_values_supported:
+  - RS256
+  token_endpoint_auth_methods_supported:
+  - client_secret_post
+  - client_secret_basic
+  - private_key_jwt
+  dynamic_client_registration: true
+  frontchannel_logout_supported: true
+  scopes: scopes/echodyne-scopes.yml
+  sources:
+  - well-known/echodyne-openid-configuration.json
+unpublished:
+  - surface: EchoWare radar management and data API
+    reason: 'No public authentication documentation. Radar API reference and manuals are
+      distributed through the login-gated Echodyne Customer Portal. Public technical sheets
+      describe only the transport (TCP/IP Gigabit / 10 Gbps Ethernet), not the auth model.'
+    evidence: https://www.echodyne.com/radar-systems/echoware
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://portal.echodyne.com/.well-known/openid-configuration
+  http_status: 200
+  content_type: application/json

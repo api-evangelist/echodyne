@@ -1,0 +1,14 @@
+{
+  "repo": "echodyne",
+  "feeds": [
+    {
+      "source": "https://portal.echodyne.com/s/login/",
+      "feed_url": "https://portal.echodyne.com/s/login/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-01T15:49:00Z"
+}

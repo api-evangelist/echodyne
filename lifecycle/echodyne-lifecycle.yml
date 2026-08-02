@@ -1,0 +1,51 @@
+generated: '2026-08-01'
+method: searched
+source: https://cdn.prod.website-files.com/69148cb0d4c3689c365788f0/69e12c6f5b8e68081a470899_TS-SS-Echodyne-6AP.pdf
+sources:
+- https://cdn.prod.website-files.com/69148cb0d4c3689c365788f0/69e12c6f5b8e68081a470899_TS-SS-Echodyne-6AP.pdf
+- https://www.echodyne.com/radar-systems/echoware
+- https://www.echodyne.com/contact
+versioning:
+  scheme: radar software / firmware release version
+  current: 'EchoShield software version 8.1 (named as the EchoWare minimum radar firmware
+    requirement)'
+  cadence: 'Software & Support entitlement includes all major and minor releases'
+  docs: https://www.echodyne.com/radar-systems/echoware
+  api_versioning: not published
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No public deprecation or sunset policy. Product lifecycle and release notes are
+    distributed through the login-gated Customer Portal.
+sla:
+  url: null
+  uptime_target: null
+  note: 'No published SLA. Support is entitlement-based rather than uptime-based: the
+    Software & Support package provides priority technical support queuing via company match
+    on support@echodyne.com, review and training sessions, systems integration,
+    troubleshooting, performance review and planning.'
+status_page: null
+status_page_note: 'Probed 2026-08-01 — status.echodyne.com does not resolve and no status
+  page is linked from the site. The product is customer-deployed on-premise hardware, so
+  there is no vendor-hosted service to publish uptime for.'
+support:
+  email: support@echodyne.com
+  contact_url: https://www.echodyne.com/contact
+  portal: https://portal.echodyne.com/s/login/
+  portal_description: 24/7 access to all tools, manuals and materials
+  community: 'User community — customers submit requests for features and functionality'
+release_channels:
+- name: Software Updates
+  entitlement: Software & Support package
+  includes:
+  - all major and minor releases
+  - improved radar operations
+  - enhanced classification
+  - radar data visualization tools
+  - radar support tools
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-01'
+  status_probe:
+    status.echodyne.com: DNS does not resolve
+    trust.echodyne.com: DNS does not resolve

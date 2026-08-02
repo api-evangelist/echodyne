@@ -1,0 +1,138 @@
+generated: '2026-08-01'
+method: searched
+source: https://www.echodyne.com/newsroom
+note: 'Listing-only catalog. Every entry has `arazzo: null` because neither Echodyne nor any
+  listed partner publishes a machine-readable OpenAPI in the API Evangelist catalog, so no
+  workflow can be authored without inventing operations. Each entry records the public
+  evidence for the integration only. Re-run this artifact when either side publishes a spec.'
+integrations:
+- slug: genetec
+  label: Genetec Security Center
+  partner: Genetec
+  category: video-management-and-security-platform
+  use_case: 'Ingest Echodyne radar detections and tracks into Genetec Security Center for
+    unified perimeter and airspace surveillance.'
+  evidence: https://techdocs.genetec.com/r/en-US/RSA-Surveillance-Integration-Guide-for-Echodyne-Radar-Systems/Integrating-Echodyne-radar-systems-in-Security-Center
+  direction: partner-consumes-echodyne
+  arazzo: null
+  status: pending-partner-spec
+- slug: dedrone
+  label: Dedrone airspace security
+  partner: Dedrone
+  category: counter-uas
+  use_case: 'Fuse Echodyne radar tracks with Dedrone RF and camera sensors for complete
+    airspace security and drone detection.'
+  evidence: https://www.dedrone.com/technology-partners/echodyne-2
+  direction: partner-consumes-echodyne
+  network_repo: all/dedrone
+  arazzo: null
+  status: pending-partner-spec
+- slug: picogrid
+  label: Picogrid Legion
+  partner: Picogrid
+  category: sensor-data-platform
+  use_case: 'Make Echodyne radar data available through Picogrid Legion, an API-first data
+    platform, for unified situational awareness across sensor fleets.'
+  evidence: https://www.echodyne.com/newsroom/picogrid-adds-echodyne-to-its-partner-ecosystem
+  direction: partner-consumes-echodyne
+  network_repo: all/picogrid
+  arazzo: null
+  status: pending-partner-spec
+- slug: cambridge-pixel
+  label: Cambridge Pixel radar processing
+  partner: Cambridge Pixel
+  category: radar-processing-and-display
+  use_case: 'Acquire, process and display EchoShield and EchoGuard radar data in Cambridge
+    Pixel SPx software for C-UAS, security and military systems.'
+  evidence: https://cambridgepixel.com/support/supported-radars/echodyne/
+  direction: partner-consumes-echodyne
+  arazzo: null
+  status: pending-partner-spec
+- slug: atak
+  label: Android Team Awareness Kit (ATAK)
+  partner: TAK Product Center
+  category: tactical-situational-awareness
+  use_case: 'Configure, control and visualize Echodyne MESA radar data inside ATAK via the
+    first-party Echodyne ATAK plugin, distributed through the Customer Portal as part of the
+    Software & Support package.'
+  evidence: https://www.echodyne.com/newsroom/echodyne-announces-atak-integration-for-mesa-r-radar-platform
+  direction: echodyne-first-party-plugin
+  arazzo: null
+  status: no-public-spec
+- slug: axon
+  label: Axon public safety
+  partner: Axon
+  category: public-safety
+  use_case: 'Extend Echodyne radar into Axon public safety workflows and drone-as-first-
+    responder programs.'
+  evidence: https://www.echodyne.com/newsroom/echodyne-expands-public-safety-radar-applications-through-partnership-with-axon
+  direction: partner-consumes-echodyne
+  network_repo: all/axon
+  arazzo: null
+  status: pending-partner-spec
+- slug: anra-technologies
+  label: ANRA Technologies SmartSkies
+  partner: ANRA Technologies
+  category: uas-traffic-management
+  use_case: 'Add Echodyne radar to ANRA''s single integrated operating picture for UAS traffic
+    management and BVLOS operations.'
+  evidence: https://www.echodyne.com/newsroom/echodyne-radar-added-to-anra-technologies-single-integrated-operating-picture-solution
+  direction: partner-consumes-echodyne
+  arazzo: null
+  status: pending-partner-spec
+- slug: kongsberg
+  label: Kongsberg IRIS Terminal
+  partner: Kongsberg
+  category: command-and-control
+  use_case: 'Surface Echodyne radar tracks inside the Kongsberg IRIS Terminal C2 environment.'
+  evidence: https://www.echodyne.com/newsroom/kongsberg-adds-echodyne-to-iris-terminal
+  direction: partner-consumes-echodyne
+  arazzo: null
+  status: pending-partner-spec
+- slug: brinc
+  label: BRINC drone-as-first-responder
+  partner: BRINC
+  category: public-safety-drones
+  use_case: 'Pair Echodyne radar with BRINC DFR programs for BVLOS detect-and-avoid coverage.'
+  evidence: https://www.echodyne.com/newsroom/brinc-partners-with-echodyne-for-dfr-bvlos
+  direction: partner-consumes-echodyne
+  network_repo: all/brinc
+  arazzo: null
+  status: pending-partner-spec
+- slug: iris-automation
+  label: Iris Automation Casia
+  partner: Iris Automation
+  category: detect-and-avoid
+  use_case: 'Combine Echodyne ground radar with Iris Automation onboard detect-and-avoid for
+    BVLOS drone flight.'
+  evidence: https://www.echodyne.com/newsroom/echodyne-and-iris-automation-ensure-safety-for-pioneering-drone-flight-over-trans-alaska-pipeline
+  direction: partner-consumes-echodyne
+  network_repo: all/iris-automation
+  arazzo: null
+  status: pending-partner-spec
+- slug: northrop-grumman
+  label: Northrop Grumman defense and security
+  partner: Northrop Grumman
+  category: defense-integration
+  use_case: 'Expanded partnership embedding Echodyne MESA radar into Northrop Grumman defense
+    and security applications.'
+  evidence: https://www.echodyne.com/newsroom/echodyne-and-northrop-grumman-expand-partnership-on-defense-and-security-applications
+  direction: partner-consumes-echodyne
+  network_repo: all/northrop-grumman
+  arazzo: null
+  status: pending-partner-spec
+- slug: moog
+  label: Moog RIwP turret
+  partner: Moog
+  category: weapon-systems
+  use_case: 'Echodyne radar cueing for the Moog Reconfigurable Integrated-weapons Platform
+    (RIwP), demonstrated at a US Army exercise.'
+  evidence: https://www.echodyne.com/newsroom/echodyne-and-moog-successfully-demonstrate-riwp-at-us-army-exercise
+  direction: partner-consumes-echodyne
+  network_repo: all/moog
+  arazzo: null
+  status: pending-partner-spec
+coverage:
+  listed: 12
+  with_arazzo: 0
+  with_partner_spec_in_catalog: 0

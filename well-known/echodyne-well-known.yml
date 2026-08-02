@@ -1,0 +1,53 @@
+generated: '2026-08-01'
+method: searched
+source: live probes of every Echodyne host on 2026-08-01
+summary:
+  hosts_probed: 2
+  documents_found: 1
+  note: 'The only /.well-known/ document Echodyne serves anonymously is the OpenID Connect
+    discovery manifest on the Salesforce Experience Cloud customer portal. The marketing
+    site returns 404 for every /.well-known/ path; the portal returns 401 for every
+    /.well-known/ path except openid-configuration.'
+hosts:
+- host: https://www.echodyne.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    file: ../llms/echodyne-llms.txt
+    note: not a /.well-known/ path, but the only machine-oriented discovery document the
+      marketing host publishes
+- host: https://portal.echodyne.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: echodyne-openid-configuration.json
+    spec: OpenID Connect Discovery 1.0
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+x-evidence:
+  fetched: '2026-08-01'
+  method: HTTP GET, following redirects

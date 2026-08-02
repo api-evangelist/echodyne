@@ -1,0 +1,169 @@
+generated: '2026-08-01'
+method: searched
+source: https://portal.echodyne.com/.well-known/openid-configuration
+docs: https://portal.echodyne.com/s/login/
+note: Scopes advertised by the Echodyne Customer Portal OpenID Connect discovery document. The portal
+  runs on Salesforce Experience Cloud, so scopes_supported is the Salesforce platform scope vocabulary
+  advertised by that tenant, not a scope surface Echodyne authored for its radar API. Recorded verbatim
+  as probed; which scopes are actually grantable to a given portal client is not publicly documented.
+  The EchoWare radar management/data API publishes no OAuth scope reference on the open web.
+schemes:
+- name: EchodynePortalOIDC
+  issuer: https://portal.echodyne.com
+  source: well-known/echodyne-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://portal.echodyne.com/services/oauth2/authorize
+    tokenUrl: https://portal.echodyne.com/services/oauth2/token
+  - flow: implicit
+    authorizationUrl: https://portal.echodyne.com/services/oauth2/authorize
+scopes:
+- scope: address
+  description: Access the user address claim.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: api
+  description: Access the Salesforce platform REST/SOAP APIs on behalf of the portal user.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: cdp_api
+  description: Access the Data Cloud (CDP) API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: cdp_calculated_insight_api
+  description: Access the Data Cloud calculated insights API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: cdp_identityresolution_api
+  description: Access the Data Cloud identity resolution API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: cdp_ingest_api
+  description: Access the Data Cloud ingestion API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: cdp_profile_api
+  description: Access the Data Cloud profile API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: cdp_query_api
+  description: Access the Data Cloud query API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: cdp_segment_api
+  description: Access the Data Cloud segmentation API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: chatbot_api
+  description: Access the bot/chatbot API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: chatter_api
+  description: Access the Connect (Chatter) REST API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: content
+  description: Access content/files resources.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: custom_permissions
+  description: Return the custom permissions granted to the portal user.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: data_cloud_user_claims
+  description: Return Data Cloud user claims.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: eclair_api
+  description: Access the Eclair analytics chart API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: einstein_gpt_api
+  description: Access the Einstein GPT / generative AI API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: email
+  description: Access the user email and email_verified claims.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: forgot_password
+  description: Access the forgot-password flow API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: full
+  description: Full access to all data the portal user can access (excludes refresh_token).
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: id
+  description: Access the identity URL service.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: interaction_api
+  description: Access the interaction/journey API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: lightning
+  description: Access Lightning Experience / Experience Cloud resources.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: mcp_api
+  description: Access the platform Model Context Protocol (MCP) API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: offline_access
+  description: Issue a refresh token (OIDC synonym of refresh_token).
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: openid
+  description: Request an ID token (OpenID Connect).
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: pardot_api
+  description: Access the Pardot/Account Engagement API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: phone
+  description: Access the user phone_number and phone_number_verified claims.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: profile
+  description: Access the standard OIDC profile claims for the portal user.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: pwdless_login_api
+  description: Access the passwordless login API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: refresh_token
+  description: Issue a refresh token for long-lived access.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: scrt_api
+  description: Access the Service Cloud real-time (messaging) API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: sfap_api
+  description: Access the platform agent/AI (Agentforce) API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: user_registration_api
+  description: Access the self-registration API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: visualforce
+  description: Access Visualforce pages.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: wave_api
+  description: Access the analytics (Wave/CRM Analytics) API.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+- scope: web
+  description: Access the portal web UI with the issued token.
+  sources:
+  - well-known/echodyne-openid-configuration.json
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://portal.echodyne.com/.well-known/openid-configuration
+  http_status: 200
+  scope_count: 36

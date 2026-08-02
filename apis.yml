@@ -1,18 +1,96 @@
 aid: echodyne
 name: Echodyne
-description: 'Echodyne is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Echodyne Corp is a Kirkland, Washington radar platform company that designs
+  and manufactures metamaterials electronically scanned array (MESA) radar systems for
+  defense, government, critical infrastructure protection, uncrewed aircraft systems (UAS),
+  advanced air mobility (AAM) and autonomous platforms. Its product line spans the compact
+  K-band EchoGuard 4D surveillance radar, the medium-range Ku-band EchoShield multi-mission
+  4D radar, the airborne EchoFlight radar, and EchoWare — the software platform that manages
+  a network of radars as a single instance and exposes radar management and data output to
+  external command-and-control systems. Radar data (range-Doppler spectrograms, detections,
+  measurements, tracks and radar status) is delivered in a proprietary format over standard
+  TCP/IP Gigabit and 10 Gbps Ethernet, with multiple data-rich output options available via
+  API. Developer-facing material — API documentation, manuals, tooling and the ATAK plugin —
+  is distributed through the login-gated Echodyne Customer Portal rather than a public
+  developer portal, so no machine-readable OpenAPI, AsyncAPI or GraphQL contract is published
+  on the open web.'
 url: https://raw.githubusercontent.com/api-evangelist/echodyne/refs/heads/main/apis.yml
+image: https://cdn.prod.website-files.com/69148caed4c3689c36578812/69149528cc715e60ae698ce0_echodyne-logo.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-08-01'
 modified: '2026-08-01'
 tags:
 - Company
-apis: []
+- Radar
+- Defense
+- Government
+- Critical Infrastructure
+- Counter-UAS
+- Drone Detection
+- Sensors
+- Situational Awareness
+- Aerospace
+- Hardware
+- Public Safety
+apis:
+- aid: echodyne:echoware
+  name: EchoWare Radar Management and Data API
+  description: 'EchoWare is Echodyne''s software platform for MESA radar. It manages a
+    network of Echodyne radars as a single radar instance with one Track ID per object, and
+    supports headless operation in which a command-and-control system uses well-defined data
+    and management APIs to directly manage the radar network. Radar management options are
+    consolidated behind a single API. Data output is delivered over Gigabit / 10 Gbps Ethernet
+    as range-Doppler spectrograms, detections, measurements, tracks and radar status. The API
+    reference, manuals and integration material are distributed through the login-gated
+    Echodyne Customer Portal; no public machine-readable contract is published.'
+  humanURL: https://www.echodyne.com/radar-systems/echoware
+  tags:
+  - Radar
+  - Sensors
+  - Counter-UAS
+  - Situational Awareness
+  - Defense
+  properties:
+  - type: Documentation
+    url: https://www.echodyne.com/radar-systems/echoware
+  - type: Support
+    url: https://www.echodyne.com/contact
+  - type: Conventions
+    url: conventions/echodyne-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/echodyne-lifecycle.yml
+  x-access: gated
+  x-access-note: On-premise / device-local API. No public base URL is published; the radar
+    network is addressed on the operator's own network over TCP/IP Ethernet.
+- aid: echodyne:portal-identity
+  name: Echodyne Customer Portal Identity (OpenID Connect)
+  description: 'The Echodyne Customer Portal is the login-gated distribution point for radar
+    software, manuals, tools, the ATAK plugin and support. It runs on Salesforce Experience
+    Cloud and publishes an anonymous OpenID Connect discovery document at
+    /.well-known/openid-configuration, exposing standard OAuth 2.0 / OIDC authorization,
+    token, userinfo, introspection, revocation, dynamic client registration and JWKS
+    endpoints. This is the only publicly discoverable machine-readable API surface Echodyne
+    serves on the open web; all other portal paths return 401.'
+  humanURL: https://portal.echodyne.com/s/login/
+  baseURL: https://portal.echodyne.com
+  tags:
+  - Authentication
+  - OpenID Connect
+  - OAuth
+  - Portal
+  properties:
+  - type: OpenIDConnect
+    url: https://portal.echodyne.com/.well-known/openid-configuration
+  - type: Authentication
+    url: authentication/echodyne-authentication.yml
+  - type: OAuthScopes
+    url: scopes/echodyne-scopes.yml
+  - type: WellKnown
+    url: well-known/echodyne-well-known.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +98,60 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/echodyne_stock/
+  url: https://www.echodyne.com/
+- type: Company
+  url: https://www.echodyne.com/company
+- type: Documentation
+  url: https://www.echodyne.com/radar-systems/echoware
+- type: Support
+  url: https://www.echodyne.com/contact
+- type: HelpCenter
+  url: https://portal.echodyne.com/s/login/
+- type: Portal
+  url: https://portal.echodyne.com/s/login/
+- type: Login
+  url: https://portal.echodyne.com/s/login/
+- type: Blog
+  url: https://www.echodyne.com/newsroom
+- type: PrivacyPolicy
+  url: https://www.echodyne.com/privacy-policy
+- type: Library
+  url: https://www.echodyne.com/library
+- type: Events
+  url: https://www.echodyne.com/events
+- type: Careers
+  url: https://www.echodyne.com/careers
+- type: LinkedIn
+  url: https://www.linkedin.com/company/echodyne/
+- type: LLMsTxt
+  url: llms/echodyne-llms.txt
+- type: WellKnown
+  url: well-known/echodyne-well-known.yml
+- type: Authentication
+  url: authentication/echodyne-authentication.yml
+- type: OAuthScopes
+  url: scopes/echodyne-scopes.yml
+- type: DomainSecurity
+  url: security/echodyne-domain-security.yml
+- type: Conformance
+  url: conformance/echodyne-conformance.yml
+- type: Lifecycle
+  url: lifecycle/echodyne-lifecycle.yml
+- type: Conventions
+  url: conventions/echodyne-conventions.yml
+- type: Packages
+  url: packages/echodyne-packages.yml
+- type: Integrations
+  url: integrations/_index.yml
+x-source-notes:
+- 'Contract discovery 2026-08-01: no OpenAPI/Swagger/GraphQL/AsyncAPI/MCP/A2A surface found
+  on www.echodyne.com or portal.echodyne.com. api./docs./developer./support./echoware./status.
+  subdomains do not resolve. Developer material is behind the Customer Portal login.'
+- 'No Pricing, TermsOfService, Roadmap, GitHubOrganization, StatusPage, Postman, Security
+  (disclosure) or Compliance pointer is emitted — each was probed on 2026-08-01 and Echodyne
+  publishes none of them.'
+x-enrichment:
+  date: '2026-08-01'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

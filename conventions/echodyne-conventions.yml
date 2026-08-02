@@ -1,0 +1,100 @@
+generated: '2026-08-01'
+method: searched
+source: https://www.echodyne.com/radar-systems/echoware
+sources:
+- https://www.echodyne.com/radar-systems/echoware
+- https://www.echodyne.com/radar-systems/echoguard
+- https://www.echodyne.com/radar-systems/echoshield
+- https://cdn.prod.website-files.com/69148cb0d4c3689c365788f0/6a55591add6872e68b75655d_TS-EchoGuard-Echodyne_6JL.pdf
+- https://cdn.prod.website-files.com/69148cb0d4c3689c365788f0/6a5558f970a01479ae2a92b7_TS-EchoShield-Echodyne_6JL.pdf
+- https://cdn.prod.website-files.com/69148cb0d4c3689c365788f0/69e12c6f5b8e68081a470899_TS-SS-Echodyne-6AP.pdf
+note: 'Echodyne publishes no public API reference. Everything below is taken from published
+  product technical sheets and product pages. Conventions that are genuinely not published
+  (request/response envelope, idempotency, pagination, versioning headers, error format,
+  rate-limit signalling) are recorded as unknown rather than guessed.'
+architecture:
+  model: on-premise device and network API
+  description: 'EchoWare abstracts n Echodyne radars into a single radar instance behind one
+    interface, with a single Track ID per object across the radar network. It supports a UI
+    mode and a headless mode in which an external command-and-control system uses the data
+    and management APIs to drive the radar network directly.'
+  deployment: operator-hosted (bare metal, VM, or Docker for US-GOV); no vendor-hosted SaaS
+    endpoint is published
+transport:
+  control_io: Gigabit Ethernet (TCP/IP)
+  data_io:
+  - product: EchoGuard
+    link: Gigabit Ethernet
+  - product: EchoShield
+    link: 10 Gbps Ethernet for range-Doppler spectrograms; 1 Gbps Ethernet for detections,
+      measurements, tracks and radar status
+  encoding: proprietary Echodyne format (per product pages); the wire schema is not published
+    on the open web
+data_products:
+- name: range-doppler-spectrograms
+  aka: R/V maps
+  description: Raw range-Doppler spectrogram data for offboard processing and multi-sensor
+    fusion.
+  throughput_echoguard: 40 MBps
+- name: detections
+  description: Per-dwell detections.
+  throughput_echoguard: 1 MBps
+- name: measurements
+  description: Per-dwell measurements.
+  throughput_echoguard: 1 MBps
+- name: tracks
+  description: Fused object tracks. EchoGuard supports up to 20 simultaneous tracks; EchoShield
+    tracks more than 1,000 objects of interest. Track update rate 10 Hz on both.
+  throughput_echoguard: 25 KBps
+- name: radar-status
+  description: Radar health and state telemetry.
+authentication:
+  radar_api: not published (see authentication/echodyne-authentication.yml)
+  customer_portal: OpenID Connect / OAuth 2.0 (Salesforce Experience Cloud) — see
+    authentication/echodyne-authentication.yml
+idempotency:
+  supported: unknown
+  note: No idempotency contract is published. No Idempotency pointer is emitted for this
+    provider.
+pagination:
+  supported: unknown
+  note: Not published. The primary data surface is a continuous 10 Hz stream, not a paged
+    collection.
+versioning:
+  scheme: radar firmware / software release version
+  evidence: 'EchoWare minimum system requirements name "EchoShield radars running software
+    version 8.1"'
+  api_versioning: not published
+error_handling:
+  format: not published
+  note: No public error reference or problem-details contract.
+rate_limits:
+  signalling: not published
+  note: 'Throughput is bounded by the radar hardware and link, not by an API quota: track
+    update rate is fixed at 10 Hz and per-stream data rates are published per product (see
+    data_products).'
+integration_surfaces:
+- name: EchoWare UI
+  description: Browser-based operator interface (Google Chrome, current stable).
+- name: Headless management/data API
+  description: Well-defined data and management APIs for direct C2 control of the radar
+    network.
+- name: ATAK plugin
+  description: Android Team Awareness Kit plugin for MESA radar — configure, control and
+    visualize radar data inside ATAK. Distributed via the Customer Portal as part of the
+    Software & Support package.
+  evidence: https://www.echodyne.com/newsroom/echodyne-announces-atak-integration-for-mesa-r-radar-platform
+platform_requirements:
+  cpu: x86-64, minimum 4-core (VM or bare metal)
+  memory: 16 GB RAM
+  storage: 256 GB, or 1 TB if recording (SSD or NVMe)
+  network: 1 Gbit Ethernet
+  operating_systems:
+  - Ubuntu LTS 20.04 and 22.04 (native + Docker for US-GOV)
+  - Windows 10 and 11 (native client)
+  browser: Google Chrome (current stable)
+cross_links:
+  authentication: authentication/echodyne-authentication.yml
+  lifecycle: lifecycle/echodyne-lifecycle.yml
+  conformance: conformance/echodyne-conformance.yml
+  integrations: integrations/_index.yml

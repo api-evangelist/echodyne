@@ -1,0 +1,48 @@
+generated: '2026-08-01'
+method: searched
+source: npm, PyPI, crates.io, RubyGems, pkg.go.dev and GitHub registry searches on 2026-08-01
+summary:
+  official_packages: 0
+  community_packages: 1
+  note: 'Echodyne publishes no first-party client libraries to any public package registry
+    and operates no public GitHub organization (api.github.com/orgs/echodyne returns 404).
+    Radar software, tooling and the ATAK plugin are distributed exclusively through the
+    login-gated Customer Portal. Because there is no official SDK, no `SDKs` pointer is
+    emitted in apis.yml.'
+packages:
+- language: typescript
+  registry: npm
+  name: radar-node
+  version: 1.0.0
+  url: https://www.npmjs.com/package/radar-node
+  repository: https://github.com/jacobrsyntaxindustries/radar-node
+  install: npm install radar-node
+  official: false
+  publisher: Jacob Ross (Syntax Industries)
+  license: MIT
+  published: '2025-06-27'
+  description: 'Third-party TypeScript library for communication and control with Echodyne
+    radar panels — HTTP and WebSocket clients, scan control, target retrieval, configuration
+    management and event streaming.'
+  caveat: 'Community-authored and unaffiliated with Echodyne. Its endpoint and auth model
+    have not been verified against any Echodyne-published contract.'
+registries_probed:
+- registry: npm
+  query: echodyne
+  results: 1
+- registry: pypi
+  query: echodyne
+  results: 1
+  note: 'https://pypi.org/project/echodyne/ returns 200 but is an empty placeholder (v0.0.5,
+    no summary, author, description, homepage or project URLs). No evidence links it to
+    Echodyne Corp, so it is not recorded as an Echodyne package.'
+- registry: crates.io
+  query: echodyne
+  results: 0
+- registry: rubygems
+  query: echodyne
+  results: 0
+- registry: github
+  query: echodyne
+  results: 2
+  note: 'Only a WordPress theme repo and an interview exercise; neither is first-party.'
