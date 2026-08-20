@@ -80,6 +80,10 @@ apis:
   tags:
   - Authentication
   - OpenID Connect
+  - Portal
+  tags_raw:
+  - Authentication
+  - OpenID Connect
   - OAuth
   - Portal
   properties:
