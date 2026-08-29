@@ -15,6 +15,17 @@ description: 'Echodyne Corp is a Kirkland, Washington radar platform company tha
   developer portal, so no machine-readable OpenAPI, AsyncAPI or GraphQL contract is published
   on the open web.'
 url: https://raw.githubusercontent.com/api-evangelist/echodyne/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/69148caed4c3689c36578812/69149528cc715e60ae698ce0_echodyne-logo.png
 x-type: company
 x-source: harvest:secondary-market
