@@ -64,48 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Echodyne Corp is a Kirkland, Washington radar platform company building metamaterials
-electronically scanned array (MESA®) radar for defense, government, critical infrastructure,
-uncrewed aircraft systems (UAS) and advanced air mobility (AAM). Products include the compact
-K-band **EchoGuard**, the medium-range Ku-band **EchoShield**, the airborne **EchoFlight**, and
-**EchoWare** — the software platform that manages a network of radars as a single instance and
-exposes radar management and data output to external command-and-control systems.
+Echodyne Corp is a Kirkland, Washington radar platform company that designs and manufactures metamaterials electronically scanned array (MESA) radar systems for defense, government, critical infrastructure protection, uncrewed aircraft systems (UAS), advanced air mobility (AAM) and autonomous platforms. Its product line spans the compact K-band EchoGuard 4D surveillance radar, the medium-range Ku-band EchoShield multi-mission 4D radar, the airborne EchoFlight radar, and EchoWare — the software platform that manages a network of radars as a single instance and exposes radar management and data output to external command-and-control systems. Radar data (range-Doppler spectrograms, detections, measurements, tracks and radar status) is delivered in a proprietary format over standard TCP/IP Gigabit and 10 Gbps Ethernet, with multiple data-rich output options available via API. Developer-facing material — API documentation, manuals, tooling and the ATAK plugin — is distributed through the login-gated Echodyne Customer Portal rather than a public developer portal, so no machine-readable OpenAPI, AsyncAPI or GraphQL contract is published on the open web.
 
-- Website: https://www.echodyne.com/
-- EchoWare: https://www.echodyne.com/radar-systems/echoware
-- Customer Portal: https://portal.echodyne.com/s/login/
-- Resource library: https://www.echodyne.com/library
+**Areas:** Company · Radar · Defense · Government · Critical Infrastructure · Counter-UAS · Drone Detection · Sensors · Situational Awareness · Aerospace · Hardware · Public Safety
 
-## API posture
+## Echodyne on APIs.io
 
-Echodyne markets "multiple data-rich output options available via API" and a headless mode in
-which a C2 system drives the radar network directly. Radar data — range-Doppler spectrograms,
-detections, measurements, tracks and radar status — moves in a proprietary format over TCP/IP
-Gigabit (EchoGuard) and 10 Gbps / 1 Gbps Ethernet (EchoShield).
+Everything profiled for Echodyne is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/echodyne/](https://apis.io/providers/echodyne/)** — or go straight to one of the APIs or properties below.
 
-**No machine-readable contract is published on the open web.** Contract discovery on 2026-08-01
-found no OpenAPI, Swagger, GraphQL, AsyncAPI, MCP server or A2A agent card on any Echodyne host;
-`api.`, `docs.`, `developer.`, `support.`, `echoware.` and `status.` subdomains do not resolve.
-API reference, manuals, tooling and the ATAK plugin are distributed through the login-gated
-Customer Portal.
+### APIs (2)
 
-What Echodyne *does* serve anonymously:
+- [EchoWare Radar Management and Data API](https://apis.io/apis/echodyne/echoware/) — EchoWare is Echodyne's software platform for MESA radar. It manages a network of Echodyne radars as a single radar instance with one Track ID per object,…
+- [Echodyne Customer Portal Identity (OpenID Connect)](https://apis.io/apis/echodyne/portal-identity/) — The Echodyne Customer Portal is the login-gated distribution point for radar software, manuals, tools, the ATAK plugin and support. It runs on Salesforce…
 
-- `https://www.echodyne.com/llms.txt` — a real, well-formed llms.txt
-- `https://portal.echodyne.com/.well-known/openid-configuration` — OIDC discovery for the
-  Salesforce Experience Cloud customer portal (the only public machine-readable API surface)
+### Published properties
 
-## Artifacts
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Dir | File | Method |
-|---|---|---|
-| `llms/` | `echodyne-llms.txt` | searched (verbatim) |
-| `well-known/` | `echodyne-well-known.yml`, `echodyne-openid-configuration.json` | searched / probed |
-| `authentication/` | `echodyne-authentication.yml` | searched |
-| `scopes/` | `echodyne-scopes.yml` | searched |
-| `security/` | `echodyne-domain-security.yml` | probed |
-| `conformance/` | `echodyne-conformance.yml` | searched |
-| `lifecycle/` | `echodyne-lifecycle.yml` | searched |
-| `conventions/` | `echodyne-conventions.yml` | searched |
-| `packages/` | `echodyne-packages.yml` | searched |
-| `integrations/` | `_index.yml` | searched (listing-only) |
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Echodyne Authentication](https://apis.io/security/echodyne/echodyne-authentication/)
+- [Echodyne Domain Security](https://apis.io/security/echodyne/echodyne-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Echodyne Scopes](https://apis.io/scopes/echodyne/echodyne-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.echodyne.com/)
+- [Documentation](https://www.echodyne.com/radar-systems/echoware)
+- [Support](https://www.echodyne.com/contact)
+- [Blog](https://www.echodyne.com/newsroom)
+- [Privacy policy](https://www.echodyne.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 23.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 23.7 |
+
+**Agent readiness 10.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.4** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/echodyne/](https://apis.io/providers/echodyne/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Echodyne: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/echodyne/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
